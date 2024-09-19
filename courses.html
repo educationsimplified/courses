@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses - Education Simplified Courses</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .course-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            background: #f3f3f3;
+        }
+        .course-card:hover {
+            transform: scale(1.05);
+        }
+        .course-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .course-videos {
+            list-style: none;
+            padding: 0;
+        }
+        .course-videos li {
+            margin: 10px 0;
+        }
+        .video-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: none;
+        }
+        .comment-section {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,8 +47,8 @@
             <p>CALL: +91 9335723334 | EMAIL: uzairatwork02@gmail.com | WHATSAPP: <a href="https://wa.link/4jrun4">+91 933572 3334</a> | INSTAGRAM: <a href="https://www.instagram.com/uzairvibes">@uzairvibes</a></p>
         </div>
         <div class="header-main">
-            <img src="EDUCATION SIMPLIFIED INDIA.png" alt="Education Simplified India Logo">
-            <h1>EDUCATION SIMPLIFIED INDIA</h1>
+            <img src="images/EDUCATION_SIMPLIFIED_INDIA.png" alt="Education Simplified India Logo">
+            <h1>GLOBAL GYAAN</h1>
             <h2>A to Z Gyaan about Skills</h2>
         </div>
         <nav>
@@ -31,17 +66,49 @@
     <main>
         <section class="courses">
             <h2>Our Courses</h2>
-            <ul>
-                <li><a href="https://youtube.com/playlist?list=PLNlNWbChYIWt91Fc5XZtGIJ5Nuu0soGh9&si=03QpydqwLY7V8i-l" target="video-frame">Deploying HTML, CSS, and JavaScript Code Online</a></li>
-                <li><a href="https://youtube.com/playlist?list=PLNlNWbChYIWt8xn2HMzfqk0wVKgglW4v6&si=bVIUIvIPZ16daNQB" target="video-frame">HTML OG Series</a></li>
-            </ul>
+            <div class="course-card" id="batch1">
+                <div class="course-title">Batch 1: Deploying HTML, CSS, and JavaScript Code Online for Free</div>
+                <ul class="course-videos">
+                    <li><a href="#" data-video="https://www.youtube.com/embed/_OLbB2489vY">Video 1: Introduction</a></li>
+                    <li><a href="#" data-video="https://www.youtube.com/embed/jCH3X7kecbo">Video 2: Getting Started</a></li>
+                    <li><a href="#" data-video="https://www.youtube.com/embed/CA7VtnSXcIU">Video 3: Advanced Techniques</a></li>
+                    <li><a href="#" data-video="https://www.youtube.com/embed/9gGf9qA41VU">Video 4: Final Steps</a></li>
+                    <li><a href="#" data-video="https://www.youtube.com/embed/Zv9ohX_dw7s">Video 5: Conclusion</a></li>
+                </ul>
+                <div class="comment-section">
+                    <h3>Comments</h3>
+                    <textarea rows="4" cols="50" placeholder="Leave a comment..."></textarea>
+                </div>
+            </div>
+            <div class="course-card" id="batch2">
+                <div class="course-title">Batch 2: HTML OG Series</div>
+                <ul class="course-videos">
+                    <li><a href="#" data-video="https://www.youtube.com/embed/Zv9ohX_dw7s">Video 1: Overview</a></li>
+                    <!-- Add more videos here as needed -->
+                </ul>
+                <div class="comment-section">
+                    <h3>Comments</h3>
+                    <textarea rows="4" cols="50" placeholder="Leave a comment..."></textarea>
+                </div>
+            </div>
         </section>
+        <iframe id="video-frame" class="video-frame"></iframe>
     </main>
 
     <footer>
         <p>COPYRIGHT EDUCATION SIMPLIFIED INDIA, DEVELOPED BY UZAIR AHMED</p>
     </footer>
 
-    <iframe name="video-frame" style="display:none;"></iframe>
+    <script>
+        document.querySelectorAll('.course-videos a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const videoUrl = this.getAttribute('data-video');
+                const iframe = document.getElementById('video-frame');
+                iframe.src = videoUrl;
+                iframe.style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
