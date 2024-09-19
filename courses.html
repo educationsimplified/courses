@@ -39,6 +39,12 @@
         .comment-section {
             margin-top: 20px;
         }
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .video-frame {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -47,7 +53,7 @@
             <p>CALL: +91 9335723334 | EMAIL: uzairatwork02@gmail.com | WHATSAPP: <a href="https://wa.link/4jrun4">+91 933572 3334</a> | INSTAGRAM: <a href="https://www.instagram.com/uzairvibes">@uzairvibes</a></p>
         </div>
         <div class="header-main">
-            <img src="images/EDUCATION_SIMPLIFIED_INDIA.png" alt="Education Simplified India Logo">
+            <img src="EDUCATION SIMPLIFIED INDIA.png" alt="Education Simplified India Logo">
             <h1>GLOBAL GYAAN</h1>
             <h2>A to Z Gyaan about Skills</h2>
         </div>
@@ -66,13 +72,15 @@
     <main>
         <section class="courses">
             <h2>Our Courses</h2>
+
+            <!-- Batch 1 Course Card -->
             <div class="course-card" id="batch1">
                 <div class="course-title">Batch 1: Deploying HTML, CSS, and JavaScript Code Online for Free</div>
                 <ul class="course-videos">
-                    <li><a href="#" data-video="https://www.youtube.com/embed/_OLbB2489vY">Video 1: Introduction</a></li>
-                    <li><a href="#" data-video="https://www.youtube.com/embed/jCH3X7kecbo">Video 2: Getting Started</a></li>
-                    <li><a href="#" data-video="https://www.youtube.com/embed/CA7VtnSXcIU">Video 3: Advanced Techniques</a></li>
-                    <li><a href="#" data-video="https://www.youtube.com/embed/9gGf9qA41VU">Video 4: Final Steps</a></li>
+                    <li><a href="#" data-video="https://www.youtube.com/embed/_OLbB2489vY">Video 1: How to publish website to GitHub</a></li>
+                    <li><a href="#" data-video="https://www.youtube.com/embed/jCH3X7kecbo">Video 2: Rank GitHub Pages on Google</a></li>
+                    <li><a href="#" data-video="https://www.youtube.com/embed/CA7VtnSXcIU">Video 3: More on GitHub Page SEO | TECHOGIES</a></li>
+                    <li><a href="#" data-video="https://www.youtube.com/embed/4Mxom6tX5aQ">Video 4: Final Steps</a></li>
                     <li><a href="#" data-video="https://www.youtube.com/embed/Zv9ohX_dw7s">Video 5: Conclusion</a></li>
                 </ul>
                 <div class="comment-section">
@@ -80,11 +88,13 @@
                     <textarea rows="4" cols="50" placeholder="Leave a comment..."></textarea>
                 </div>
             </div>
+
+            <!-- Batch 2 Course Card -->
             <div class="course-card" id="batch2">
                 <div class="course-title">Batch 2: HTML OG Series</div>
                 <ul class="course-videos">
                     <li><a href="#" data-video="https://www.youtube.com/embed/Zv9ohX_dw7s">Video 1: Overview</a></li>
-                    <!-- Add more videos here as needed -->
+                    <!-- Additional videos can be added here -->
                 </ul>
                 <div class="comment-section">
                     <h3>Comments</h3>
@@ -92,7 +102,9 @@
                 </div>
             </div>
         </section>
-        <iframe id="video-frame" class="video-frame"></iframe>
+
+        <!-- Video Display Section -->
+        <iframe id="video-frame" class="video-frame" allowfullscreen></iframe>
     </main>
 
     <footer>
@@ -107,6 +119,7 @@
                 const iframe = document.getElementById('video-frame');
                 iframe.src = videoUrl;
                 iframe.style.display = 'block';
+                iframe.scrollIntoView({ behavior: 'smooth' }); // Scroll to video when selected
             });
         });
     </script>
